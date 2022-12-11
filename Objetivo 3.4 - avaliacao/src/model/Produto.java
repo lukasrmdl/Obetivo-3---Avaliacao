@@ -1,19 +1,24 @@
 package model;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ProdutoO3L1 {
-	private long codigo;
+public class Produto {
+	private int codigo;
 	private String nome;
-	private int quantidade;
+
+	private Integer quantidade;
 	private double preco;
 	private Fornecedor fornecedor;
 
-	public ProdutoO3L1() {
+	private List<Item> itens = new ArrayList<>();
+
+	public Produto() {
 		super();
 	}
 
-	public ProdutoO3L1(long codigo, String nome, int quantidade, double preco, Fornecedor fornecedor) {
+	public Produto(int codigo, String nome, Integer quantidade, double preco, Fornecedor fornecedor) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -22,11 +27,11 @@ public class ProdutoO3L1 {
 		this.fornecedor = fornecedor;
 	}
 
-	public long getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -38,14 +43,13 @@ public class ProdutoO3L1 {
 		this.nome = nome;
 	}
 
-	public int getQuantidade() {
+	public Integer getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(int quantidade) {
+	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
-
 	public double getPreco() {
 		return preco;
 	}
@@ -64,7 +68,7 @@ public class ProdutoO3L1 {
 
 	@Override
 	public String toString() {
-		return "\nProdutoL1 [codigo=" + codigo + ", nome=" + nome + ", quantidade=" + quantidade + ", preco=" + NumberFormat.getCurrencyInstance().format(preco) + "]";
+		return "\nProduto [codigo=" + codigo + ", nome=" + nome + ", Quantidade=" + quantidade + ", preco=" + NumberFormat.getCurrencyInstance().format(preco) + "]";
 	}
 
 }

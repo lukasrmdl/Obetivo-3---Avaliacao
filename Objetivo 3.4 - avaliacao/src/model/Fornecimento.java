@@ -6,18 +6,19 @@ import java.util.Calendar;
 
 public class Fornecimento {
 	private Calendar data;
-	private double total;
+
+	private double valorTotal;
 	private Fornecedor fornecedor;
-	private ProdutoO3L1 produto;
+	private Produto produto;
 
 	public Fornecimento() {
 		super();
 	}
 
-	public Fornecimento(Calendar data, double total, Fornecedor fornecedor, ProdutoO3L1 produto) {
+	public Fornecimento(Calendar data, double total, Fornecedor fornecedor, Produto produto) {
 		super();
 		this.data = data;
-		this.total = total;
+		this.valorTotal = valorTotal;
 		this.fornecedor = fornecedor;
 		this.produto = produto;
 	}
@@ -31,11 +32,11 @@ public class Fornecimento {
 	}
 
 	public double getTotal() {
-		return total;
+		return valorTotal;
 	}
 
 	public void setTotal(double total) {
-		this.total = total;
+		this.valorTotal = total;
 	}
 
 	public Fornecedor getFornecedor() {
@@ -46,17 +47,17 @@ public class Fornecimento {
 		this.fornecedor = fornecedor;
 	}
 
-	public ProdutoO3L1 getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
 
-	public void setProduto(ProdutoO3L1 produto) {
+	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
 
 	@Override
 	public String toString() {
-		return "\n\nFornecimento [data=" + calendarToString(data) + ", total=" + NumberFormat.getCurrencyInstance().format(total) + ", fornecedor=" + fornecedor + ", produto=" + produto
+		return "\n\nFornecimento [data=" + calendarToString(data) + ", total=" + NumberFormat.getCurrencyInstance().format(valorTotal) + ", fornecedor=" + fornecedor + ", produto=" + produto
 				+ "]";
 	}
 

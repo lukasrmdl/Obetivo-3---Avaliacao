@@ -1,34 +1,14 @@
 package model;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 public abstract class Funcionario {
-	private int matricula;
-	private String nome;
-	private String endereco;
+	protected int matricula;
+	protected String nome;
+	protected String endereco;
 
-	private String bairro;
-	private String cep;
-	private String cidade;
-	private String estado;
-
-
-
-	public Funcionario() {
-		super();
-	}
-
-	public Funcionario(int matricula, String nome, String endereco, String bairro, String cep, String cidade, String estado ) {
-		super();
-		this.matricula = matricula;
-		this.nome = nome;
-		this.endereco = endereco;
-		this.bairro = bairro;
-		this.cep = cep;
-		this.cidade = cidade;
-		this.estado = estado;
-	}
+	protected String bairro;
+	protected String cep;
+	protected String cidade;
+	protected String estado;
 
 	//setters e getters
 
@@ -38,6 +18,7 @@ public abstract class Funcionario {
 
 	public int setMatricula(int id) {
 		this.matricula = matricula;
+		return matricula;
 	}
 
 	public String getNome() {
@@ -88,20 +69,5 @@ public abstract class Funcionario {
 		this.estado = estado;
 	}
 
-
-	@Override
-	public String toString() {
-		return "\nFuncionario [id=" + id + ", cpf=" + cpf + ", nome=" + nome + ", sobrenome=" + sobrenome
-				+ ", dataNascimento=" + calendarToString(dataNascimento) + "]";
-	}
-
-	// métodos utilitários para conversão de Calendar para String formatada
-	private static String calendarToString(Calendar data) {
-		if (data != null) {
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
-			return sdf.format(data.getTime());
-		}
-		return "00/00/0000 00:00";
-	}
 
 }

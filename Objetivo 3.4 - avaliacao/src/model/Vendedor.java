@@ -1,14 +1,19 @@
 package model;
 
-public class Gerente extends Funcionario {
+import java.util.ArrayList;
+import java.util.List;
 
-    private String formacao;
+public class Vendedor extends Funcionario {
 
-    public Gerente() {
+    private String local;
+
+    private List<Pedido> pedidos = new ArrayList<>();
+
+    public Vendedor() {
         super();
     }
 
-    public Gerente(int matricula, String nome, String endereco, String bairro, String cep, String cidade, String estado, String formacao ) {
+    public Vendedor(int matricula, String nome, String endereco, String bairro, String cep, String cidade, String estado, String local ) {
         super();
         this.matricula = matricula;
         this.nome = nome;
@@ -17,12 +22,13 @@ public class Gerente extends Funcionario {
         this.cep = cep;
         this.cidade = cidade;
         this.estado = estado;
-        this.formacao = formacao;
+        this.local = local;
+        this.pedidos = pedidos;
     }
 
     @Override
     public String toString() {
-        return "\nGerente [matricula=" + matricula + ", nome=" + nome + ", endereço=" + endereco + ", bairro=" + bairro
-                + ", CEP =" + cep + ", Cidade =" + cidade + ", Estado =" + estado +  ", Formação =" + formacao +  "]";
+        return "\nVendedor [matricula=" + matricula + ", nome=" + nome + ", endereço=" + endereco + ", bairro=" + bairro
+                + ", CEP =" + cep + ", Cidade =" + cidade + ", Estado =" + estado +  ", Local =" + local +  "]";
     }
 }
