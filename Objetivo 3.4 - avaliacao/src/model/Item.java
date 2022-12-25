@@ -34,4 +34,5 @@ public class Item {
         return "\n\nItem [codItem=" + codItem + ", desconto=" + desconto + ", quantidade=" + quantidade + ", produto=" + produto
                 + "total: " + this.quantidade * this.produto.getPreco() + "]";
     }
+
 }
